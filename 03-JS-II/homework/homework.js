@@ -32,7 +32,7 @@ function conection(status) {
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
   if (status == 1) {
-    return "online";
+    return "Online";
   } else if(status == 2){
     return "Away";
   }else{
@@ -129,12 +129,14 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-  if (numero % 3 == 0 && numero % 5 == 0) {
+  if(numero % 3 == 0 && numero % 5 == 0) {
     return "fizzbuzz"
-  } else if(numero % 3 == 0) {
-    return "fizz"
-  } else if(numero % 3 == 0){
-    return "buzz"
+  } else if (numero % 3 == 0 ) {
+    return "fizz";
+  } else if(numero % 5 == 0) {
+    return "buzz";
+  } else{
+    return numero;
   }
 }
 
@@ -145,16 +147,16 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
-  if (num1 > num2 && num1 > num3 && num1 > 0) {
-    return "Número 1 es mayor y positivo";
-  } else if (num1<0 || num2<0 || num3<0) {
+  if (num1==0 || num2==0 || num3==0) {
+    return "Error";
+  }else if (num1<0 || num2<0 || num3<0) {
     return "Hay negativos";
-  } else if (num3 > num2 && num3 > num1) {
+  }else if (num1 > num2 && num1 > num3 && num1 > 0) {
+    return "Número 1 es mayor y positivo";
+  }else if (num3 > num2 && num3 > num1) {
     num3++;
     return num3;
-  } else if (num1==0 || num2==0 || num3==0) {
-    return "Error";
-  } else {
+  }else{
     return false;
   }
 }
@@ -191,19 +193,28 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí
-
+  var tabla6 = [];
+  for (var i = 0; i <= 10; i++) {
+    tabla6[i] = 6 * i;
+  }
+  return tabla6;
 }
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+  if (numero>99 && numero < 1000) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+  
 }
 
 
